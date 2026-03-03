@@ -1,0 +1,187 @@
+# IUT Lecture — Automated Testing
+
+Welcome! Everything you need for this lecture is in this repository.
+
+## 🚀 Start Coding
+
+You have two options:
+
+---
+
+### Option 1 — Use GitHub Codespaces
+
+. Click **Code → Create Codespace**
+. Open terminal
+. Follow guidelines and TODOs
+. Run exercises at each checkpoint:
++
+```bash
+./mvnw test
+```
+
+*No installation required* — everything runs in the cloud.
+
+IMPORTANT: When you are finished, make sure to stop or delete your Codespace to avoid unnecessary usage and potential costs. You have up to 60h of free usage per month, this should be more than enough for our lecture !
+
+To close it:
+
+. Go to *Code → Codespaces*
+
+. *Stop* or *delete* the active Codespace
+
+---
+
+### Option 2 — Download and Run Locally
+
+. Click *Code → Download ZIP* or *Fork* the project then *Code → Clone*
+. Make sure you have:
+.. Java 17 installed
+.. No Maven installation required (the project includes `./mvnw` wrapper)
+. Run the tests:
++
+```bash
+./mvnw test
+```
++
+(Windows users may use `mvnw.cmd test` instead.)
+
+## 🏗️ Application Architecture
+
+### Directory Breakdown 
+```
+src/
+ ├── main/
+ │    ├── java/
+ │    │    └── com/iut/bordeaux/courses
+ │    │         ├── checkpoint1_calculator/
+ │    │         ├── checkpoint2_bdd/
+ │    │         ├── checkpoint3_parameterized/
+ │    │         ├── checkpoint4_mocking/
+ │    │                 ├── domain/
+ │    │                 ├── infra/
+ │    │         ├── checkpoint5_controller/
+ │    │                 ├── domain/
+ │    │                 ├── infra/
+ │    │                 ├── transport/
+ │    └── resources/
+ │         ├── application.properties
+ │
+ └── test/
+      └── java/
+      │    └── com/iut/bordeaux/courses
+      │         ├── checkpoint1_calculator/
+      │         ├── checkpoint2_bdd/
+      │         ├── checkpoint3_parameterized/
+      │         ├── checkpoint4_mocking/
+      │         ├── checkpoint5_controller/
+      └── resources/
+           ├── multiply_data.csv
+```
+
+### Architectural Style
+
+Starting from checkpoint4, the application follows a *Layered Architecture*.
+
+#### High-Level Layers
+
+`[ Transport Layer ] -> [ Domain Layer ] -> [ Infra Layer ]`
+
+### Layer Responsabilities
+
+#### Transport Layer (`transport/`)
+
+* Exposes REST endpoints
+
+* Handles request validation
+
+* Delegates business logic to domain layer
+
+* Returns HTTP responses
+
+*Annotations Used:*
+
+* `@RestController`
+
+* `@RequestMapping`
+
+* `@PostMapping`
+
+* `@GetMapping`
+
+* `@DeleteMapping`
+
+### Domain Layer (`domain/`)
+
+* Contains business logic & domain objets
+
+* Orchestrates repository calls
+
+* Handles transactions
+
+*Annotations Used:*
+
+* `@Service`
+
+* `@Transactional`
+
+* `@EqualsAndHashCode`
+
+### Infra Layer (`infra/`)
+
+* Data access layer
+
+* Interfaces extending `JpaRepository` or similar
+
+* Query definitions
+
+*Annotations Used:*
+
+* `@Repository`
+
+## 🧪 Testing Strategy in This Course
+
+During this lecture, you will practice:
+
+* ✅ Writing basic unit tests
+
+* ✅ Refactoring tests using the BDD approach
+
+* ✅ Refactoring tests using the "Data-Driven Testing" approach (Parameterized Testing)
+
+* ✅ Mocking dependencies
+
+* ✅ Testing REST controllers
+
+* ✅ Understanding test isolation
+
+## 📚 Lecture Slides
+
+- `lecture/unit-tests-course.pdf` — prebuilt PDF
+- `lecture/unit-tests-course.html` — prebuilt Revealjs HTML
+- `lecture/unit-tests-course.adoc` — editable AsciiDoc source (can be used to generate PDF/HTML with `./generate.sh`, *requires Docker* installed)
+
+## ⚙️ Technical Stack
+
+* Java 17
+
+* Spring Boot 3.5.x
+
+* Maven Wrapper `./mvnw`
+
+* Junit 5
+
+* Mockito
+
+## 🎯 Learning Goals
+
+By the end of this session, you should be able to:
+
+* Structure a Spring Boot application for testability
+
+* Write clean, isolated unit tests
+
+* Understand integration vs unit testing
+
+* Use mocks effectively
+
+* Understand the benefits of running automated tests in CI environment

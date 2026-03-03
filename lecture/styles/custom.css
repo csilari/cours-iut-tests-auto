@@ -1,0 +1,16 @@
+/* custom.css */
+.reveal {
+    font-size: 18px;
+}
+
+.reveal h1 {
+    font-size: 3em;
+}
+
+.reveal h2 {
+    font-size: 2em;
+}
+
+.reveal p {
+    font-size: 1em;
+}

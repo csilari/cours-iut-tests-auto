@@ -1,0 +1,19 @@
+== Introduction
+
+Qui suis je ?
+
+=== Déroulement du cours
+
+* N'hésitez pas à interrompre ou à intervenir
+* Merci de ne pas faire de bruit :)
+
+=== Le contrôle continu (DS)
+
+* Comment ? Un examen papier, questionnaire + exercises "pseudo-code"
+* Quand ? Les deux dernières heures en Amphi 2
+
+=== Les sources
+
+* https://github.com/csilari/cours-iut-tests-auto
+
+image::images/github-QR-code.png[QR-Code, 480,480]

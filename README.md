@@ -1,2 +1,0 @@
-# Cours-IUT
-Cours IUT

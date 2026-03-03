@@ -1,0 +1,16 @@
+{
+    "name": "Spring Boot Testing Lecture",
+    "image": "mcr.microsoft.com/devcontainers/java:1-17-bullseye",
+    "postCreateCommand": "chmod +x mvnw && ./mvnw -q clean compile",
+    "customizations": {
+      "codespaces": {
+        "idleTimeoutMinutes": 60
+      },
+      "vscode": {
+        "extensions": [
+          "vscjava.vscode-java-pack",
+          "vmware.vscode-spring-boot"
+        ]
+      }
+    }
+  }

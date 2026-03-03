@@ -1,0 +1,24 @@
+= Automatisation des tests
+:revealjs_theme: black
+:revealjs_slideNumber: true
+:revealjs_hash: true
+:revealjs_center: false
+:customcss: styles/custom.css
+
+include::chapters/introduction.adoc[]
+
+include::chapters/why.adoc[]
+
+include::chapters/reminders.adoc[]
+
+include::chapters/frameworks.adoc[]
+
+include::chapters/automated-tests-focus-junit5.adoc[]
+
+include::chapters/howto.adoc[]
+
+include::chapters/mocks.adoc[]
+
+include::chapters/industrialization.adoc[]
+
+include::chapters/conclusion.adoc[]

@@ -1,0 +1,96 @@
+
+== Découvrez l’importance des tests
+
+=== Je viens de rework une fonction de 900 lignes sans aucun test
+
+image::images/ci-fire.jpg[]
+
+=== Coder c'est tester !
+
+* Tester, c'est douter => FAKE !
+* Tester ce n'est pas que vérifier que son application marche!
+** C'est savoir *rapidement* quand l'application ne marche plus
+** *où* dans le code
+** et *pourquoi*
+* Construire sa couverture de tests = construire ses *TNR* (Tests de Non  Régression)
+
+=== Apprendre à coder c'est apprendre à tester
+* Impact sur la conception
+* Modularité & testabilité
+
+*Plus un code est modulaire, plus il est facile de le tester unitairement.*
+
+=== TDD pour Test Driven Development
+
+ * Il s'agit d'une technique de conception où le programmeur *écrit d'abord le test avant de produire le moindre code.*
+ * Le développeur écrit ensuite le code pour que le test passe.
+ * Une fois son test finalisé, il pourra être libre de refactorer autant qu'il le souhaite jusqu'à obtenir un code « propre ».
+
+ * C'est une *idée simple mais complexe* à mettre en œuvre.
+ * Courbe d'apprentissage plus lente de prime abord.
+
+=== Pourquoi ces pratiques ?
+
+** Vérifier la bonne compréhension des fonctionnalités
+** Meilleure couverture de tests automatisés
+** Facilité d’écriture des tests avant le code « métier »
+** Ils servent à promouvoir et vérifier la qualité et la fiabilité du code
+
+* Enfin, jusqu'à une certaine limite !!
+
+image::images/dilbert_tdd.png[]
+=== Comment appliquer le TDD ?
+
+** Ecriture d’un test pour une fonctionnalité
+** Le test est « failed »
+** Codage de la fonctionnalité minimale
+** Vérification du cas passant
+** Répéter l’opération en enrichissant la fonctionnalité en refactorisant
+
+*Il s'agit de la méthodologie « Red / Green / Refactor ».*
+
+=== !
+
+** Le cycle _Red_, _Green_, _Refactor_ doit être le plus court possible. L'objectif est de rédiger le minimum de code possible à chaque cycle.
+** L'idée c'est d'écrire le test qui vous permet de rédiger le moins de code possible.
+** Cette méthode vous apprend à ne refactoriser que de _Green_ à _Green_.
+
+image::images/tdd.png[]
+
+=== ! 
+
+*Pour aller plus loin, le BDD (Behavior Driven Development)*
+
+* C'est une pratique Agile créée par Dan North en 2003 qui a pour but de créer des tests fonctionnels avec un langage naturel compris de tous. Par exemple, le langage Gherkin (Etant donné que ..., Quand ..., Alors ...).
+* Une fois le test bien écrit, le développeur n'a plus qu'à définir un comportement pour chaque fonction résultant du découpage du test.
+* L'intérêt du BDD est de pouvoir créer un référentiel facilement réutilisable, afin de créer d'autres tests fonctionnels sans qu'il y ait nécessité de redévelopper du nouveau code.
+
+=== !
+
+*Exemple*
+
+* Test 1 :
+** *Etant donné que* je suis le client sur la fiche produit _(-> Nouvelle fonction n°1)_
+** *Quand* je clique sur ajouter au panier sur le produit d’identifiant "255" _(-> Nouvelle fonction n°2)_
+** *Et que* le stock est à "3" _(-> Nouvelle fonction n°3)_
+** *Alors* le produit se rajoute au panier _(-> Nouvelle fonction n°4)_
+
+* Test 2 :
+** *Etant donné que* je suis le client sur la fiche produit _(-> Réutilisation de la fonction n°1)_
+** *Quand* je clique sur ajouter au panier sur le produit d’identifiant "42" _(-> Réutilisation de la fonction n°2)_
+** *Et que* je clique sur retirer le produit d'identifiant "255" du panier _(-> Nouvelle fonction n°5)_
+** *Alors* le panier reste vide _(-> Nouvelle fonction n°6)_
+
+=== BDD vs TDD
+
+* TDD va permettre de guider les développements, fonction par fonction (technique).
+* BDD permet de tester l’ensemble des comportements attendus par la User-Story à développer (fonctionnel).
+* TDD et BDD sont donc complémentaires.
+
+image::images/bdd-testing.png[alt="BDD Testing", width=600, align="center"]
+
+=== !
+
+*Exemple*
+
+image::images/tdd_bdd.png[alt="TDD et BDD", width=500, align="center"]
